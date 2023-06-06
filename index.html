@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>You n Me</title>
+  <link rel="stylesheet" href="partner.css">
+  <style>
+    body {
+      background-color: #FCE8F3;
+    }
+
+    .container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      height: 100vh;
+    }
+
+    p.heading {
+      text-align: center;
+      font-size: 40px;
+      font-family: "Arial", sans-serif;
+      color: #FF69B4;
+      margin-bottom: 20px;
+    }
+
+    p {
+      font-family: "Arial", sans-serif;
+      font-size: 18px;
+      font-weight: 600;
+      opacity: 0.9;
+      color: #333333;
+    }
+
+    button {
+      background-color: #FF69B4;
+      color: #FFFFFF;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+      font-size: 16px;
+      cursor: pointer;
+      margin: 10px 0;
+    }
+
+    .pic {
+      display: block;
+      margin: 0 auto;
+      width: 25%;
+    }
+
+    #dialog {
+      width: 400px;
+      margin: 0 auto;
+    }
+
+    .right {
+      margin-left: 10px;
+    }
+
+    .pic1 {
+      margin-left: 3vw;
+    }
+
+    .buttons-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    #bocchi2 {
+      position: absolute;
+      left: 50%;
+      bottom: 20px;
+      transform: translateX(-50%);
+    }
+
+    @media (max-width: 480px) {
+      .heading {
+        font-size: 29px;
+      }
+
+      .pic {
+        width: 75%;        
+      }
+
+      #bocchi1 {
+        top: 432px;
+        left: 65%;
+      }
+
+      #bocchi2 {
+        left: 35%;
+        top: 421px;
+      }
+
+      .pic1 {
+        margin-left: 11vw;
+      }
+    }
+  </style>
+
+</head>
+<body class="container">
+  <p class="heading">Vuoi venire al mare con me Domenica?</p>
+  <img class="pic" src="https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExZmNhYWE5ZjliYTQ2NTA0NTViYWFmN2FiOGE4YWRiNjc5OWMyMmZjZCZlcD12MV9pbnRlcm5hbF9naWZzX2dpZklkJmN0PWc/7y4Nc95399hsr24oYc/giphy.gif" alt="Immagine estiva">
+
+  <div class="buttons-container">
+    <button id="bocchi1" onclick="openModal()">OVVIO CHE SI</button>
+    <button id="bocchi2" onclick="handleNoClick()">NO</button>
+  </div>
+
+  <dialog id="dialog">
+    <img class="pic1" src="https://img1.picmix.com/output/stamp/normal/6/4/8/0/1560846_7d540.gif" width="210px" height="250px" alt="Immagine estiva">
+    <br/>
+    <center><p>&#x1F493;&#x1F493;&#x1F493;</p></center>
+    <button onclick="closeModal()" class="right">close &lt;&lt;</button>
+  </dialog>
+
+  <script>
+    var dialog = document.getElementById("dialog");
+
+    function openModal() {
+      dialog.showModal();
+    }
+
+    function closeModal() {
+      dialog.close();
+    }
+
+    function handleNoClick() {
+      alert("Hai detto NO! :(");
+    }
+  </script>
+</body>
+</html>
